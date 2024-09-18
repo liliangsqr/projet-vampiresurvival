@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ennemi" load_steps=3 format=3 uid="uid://d1t03jef8v3yi"]
+
+[ext_resource type="Script" path="res://Codes/Enemie/Type_ennemi.gd" id="1_ihlec"]
+[ext_resource type="Texture2D" uid="uid://c14oeueg5hwge" path="res://Textures/Ennemies/cyclops.png" id="2_ocdma"]
+
+[resource]
+script = ExtResource("1_ihlec")
+nom = "cyclope"
+texture = ExtResource("2_ocdma")
+PV = 0.0
+degat = 10.0

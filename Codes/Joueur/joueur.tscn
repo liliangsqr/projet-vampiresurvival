@@ -1,0 +1,181 @@
+[gd_scene load_steps=22 format=3 uid="uid://b8wvip7sei4d4"]
+
+[ext_resource type="Script" path="res://Codes/Joueur/joueur.gd" id="1_kama8"]
+[ext_resource type="PackedScene" uid="uid://bdesynplswtoy" path="res://Codes/Projectiles/projectile.tscn" id="2_h2iwc"]
+[ext_resource type="Texture2D" uid="uid://csdloiyrf740v" path="res://Textures/Joueur/Soldier-Walk.png" id="2_kw3wa"]
+[ext_resource type="Texture2D" uid="uid://dvik8cghco7li" path="res://Textures/Joueur/Soldier-Idle.png" id="3_rykvf"]
+[ext_resource type="Script" path="res://Codes/Joueur/bare_competences.gd" id="5_5md4r"]
+[ext_resource type="PackedScene" uid="uid://dt7510yjnmkfs" path="res://Codes/Projectiles/boutton_competence.tscn" id="5_xmdrg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtp4a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q014"]
+atlas = ExtResource("2_kw3wa")
+region = Rect2(0, 0, 30, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1y36"]
+atlas = ExtResource("2_kw3wa")
+region = Rect2(30, 0, 30, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6bjr"]
+atlas = ExtResource("2_kw3wa")
+region = Rect2(60, 0, 30, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gix8k"]
+atlas = ExtResource("2_kw3wa")
+region = Rect2(90, 0, 30, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga0m3"]
+atlas = ExtResource("2_kw3wa")
+region = Rect2(120, 0, 30, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76p43"]
+atlas = ExtResource("2_kw3wa")
+region = Rect2(150, 0, 30, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up627"]
+atlas = ExtResource("3_rykvf")
+region = Rect2(0, 0, 30, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyvjf"]
+atlas = ExtResource("3_rykvf")
+region = Rect2(30, 0, 30, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dx33"]
+atlas = ExtResource("3_rykvf")
+region = Rect2(60, 0, 30, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hupwh"]
+atlas = ExtResource("3_rykvf")
+region = Rect2(90, 0, 30, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sofle"]
+atlas = ExtResource("3_rykvf")
+region = Rect2(120, 0, 30, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fad6l"]
+atlas = ExtResource("3_rykvf")
+region = Rect2(150, 0, 30, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6whd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8q014")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1y36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6bjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gix8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga0m3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76p43")
+}],
+"loop": true,
+"name": &"mouvement",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up627")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyvjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dx33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hupwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sofle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fad6l")
+}],
+"loop": true,
+"name": &"statique",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxvjj"]
+
+[node name="Joueur" type="CharacterBody2D"]
+position = Vector2(596, 332)
+disable_mode = 2
+script = ExtResource("1_kama8")
+objet_projectile = ExtResource("2_h2iwc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qtp4a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v6whd")
+animation = &"mouvement"
+frame_progress = 0.0830123
+
+[node name="DomagesSubit" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DomagesSubit"]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_rxvjj")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Bare_vie" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+modulate = Color(0, 1, 0, 1)
+self_modulate = Color(0, 1, 0, 1)
+anchors_preset = -1
+anchor_left = 0.517
+anchor_top = 0.512
+anchor_right = 0.517
+anchor_bottom = 0.512
+offset_left = -15.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = -19.0
+value = 100.0
+show_percentage = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="Bare_competences" type="HBoxContainer" parent="Interface"]
+anchors_preset = -1
+anchor_left = 0.837
+anchor_top = 0.903
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.223999
+offset_top = -0.144043
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.998295, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource("5_5md4r")
+
+[node name="Boutton_Competence" parent="Interface/Bare_competences" instance=ExtResource("5_xmdrg")]
+layout_mode = 2
+
+[node name="Boutton_Competence2" parent="Interface/Bare_competences" instance=ExtResource("5_xmdrg")]
+layout_mode = 2
+
+[node name="Boutton_Competence3" parent="Interface/Bare_competences" instance=ExtResource("5_xmdrg")]
+layout_mode = 2
+
+[connection signal="body_entered" from="DomagesSubit" to="." method="_on_domages_subit_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

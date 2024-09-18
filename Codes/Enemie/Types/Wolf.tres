@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ennemi" load_steps=3 format=3 uid="uid://bmf8o0m8lf08e"]
+
+[ext_resource type="Script" path="res://Codes/Enemie/Type_ennemi.gd" id="1_82gh1"]
+[ext_resource type="Texture2D" uid="uid://c8nr31eocp1mp" path="res://Textures/Ennemies/kolbold_weak.png" id="2_xvn74"]
+
+[resource]
+script = ExtResource("1_82gh1")
+nom = "Loup"
+texture = ExtResource("2_xvn74")
+PV = 0.0
+degat = 2.0

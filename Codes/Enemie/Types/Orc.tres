@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ennemi" load_steps=3 format=3 uid="uid://dw87t334fqols"]
+
+[ext_resource type="Script" path="res://Codes/Enemie/Type_ennemi.gd" id="1_wod65"]
+[ext_resource type="Texture2D" uid="uid://cs6w32q30ytpc" path="res://Textures/Ennemies/juggernaut.png" id="2_qeapi"]
+
+[resource]
+script = ExtResource("1_wod65")
+nom = "orc"
+texture = ExtResource("2_qeapi")
+PV = 0.0
+degat = 20.0

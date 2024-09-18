@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ennemi" load_steps=3 format=3 uid="uid://fdfejendpeqw"]
+
+[ext_resource type="Script" path="res://Codes/Enemie/Type_ennemi.gd" id="1_qnyk2"]
+[ext_resource type="Texture2D" uid="uid://nylvdc472max" path="res://Textures/Ennemies/giant_amoeba_new.png" id="2_alatk"]
+
+[resource]
+script = ExtResource("1_qnyk2")
+nom = "blob"
+texture = ExtResource("2_alatk")
+PV = 0.0
+degat = 1.0

@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt7510yjnmkfs"]
+
+[ext_resource type="Script" path="res://Codes/Projectiles/boutton_competence.gd" id="2_22y5d"]
+[ext_resource type="Texture2D" uid="uid://dhwo0kpbwtbnn" path="res://Textures/Projectile/blanc 20x20.png" id="2_fcqb0"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_gehex"]
+
+[sub_resource type="Shortcut" id="Shortcut_s6si8"]
+events = [SubResource("InputEventKey_gehex")]
+
+[node name="Boutton_Competence" type="TextureButton"]
+custom_minimum_size = Vector2(60, 0)
+anchors_preset = -1
+anchor_right = 0.053
+anchor_bottom = 0.094
+offset_right = -0.0560036
+offset_bottom = 0.0879974
+shortcut = SubResource("Shortcut_s6si8")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_22y5d")
+
+[node name="Cooldown" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 61.0
+offset_bottom = 61.0
+step = 0.01
+value = 50.0
+fill_mode = 5
+nine_patch_stretch = true
+texture_progress = ExtResource("2_fcqb0")
+tint_progress = Color(0, 0, 0, 0.572549)
+
+[node name="Key" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "A"
+vertical_alignment = 2
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 61.0
+offset_bottom = 61.0
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://vavestn0sdmr"]
+
+[ext_resource type="Script" path="res://Codes/Enemie/Spawner/spawner.gd" id="1_exdvd"]
+[ext_resource type="Script" path="res://Codes/Enemie/Type_ennemi.gd" id="2_m02ve"]
+[ext_resource type="Resource" uid="uid://fdfejendpeqw" path="res://Codes/Enemie/Types/Blob.tres" id="3_5wsqn"]
+[ext_resource type="Resource" uid="uid://bmf8o0m8lf08e" path="res://Codes/Enemie/Types/Wolf.tres" id="4_dbqub"]
+[ext_resource type="Resource" uid="uid://bvw16y0gihfmf" path="res://Codes/Enemie/Types/Wolfv2.tres" id="5_17vfn"]
+[ext_resource type="Resource" uid="uid://d1t03jef8v3yi" path="res://Codes/Enemie/Types/Cyclope.tres" id="6_67txi"]
+[ext_resource type="Resource" uid="uid://dw87t334fqols" path="res://Codes/Enemie/Types/Orc.tres" id="7_xnoyx"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_exdvd")
+type_ennemis = Array[ExtResource("2_m02ve")]([ExtResource("3_5wsqn"), ExtResource("4_dbqub"), ExtResource("5_17vfn"), ExtResource("6_67txi"), ExtResource("7_xnoyx")])
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Interface"]
+offset_left = 1106.0
+offset_top = 3.0
+offset_right = 1148.0
+offset_bottom = 26.0
+
+[node name="Minutes" type="Label" parent="Interface/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0
+"
+
+[node name="Label2" type="Label" parent="Interface/HBoxContainer"]
+layout_mode = 2
+text = ":"
+
+[node name="Secondes" type="Label" parent="Interface/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Patern" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Elite" type="Timer" parent="."]
+wait_time = 9.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Patern" to="." method="_on_patern_timeout"]
+[connection signal="timeout" from="Elite" to="." method="_on_elite_timeout"]
