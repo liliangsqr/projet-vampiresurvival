@@ -11,7 +11,8 @@ extends CharacterBody2D
 
 func _physics_process(_delta):
 	Animation_joueur(Deplacement_joueur());
-
+	;
+		
 #region DEPLACEMENT & ANIMATION
 func Deplacement_joueur() -> Vector2: 
 	# le mouvement sur l'axe des X
@@ -34,11 +35,19 @@ func Animation_joueur(mouvement:Vector2):
 	elif mouvement.x < 0  :
 		anim2D.flip_h = true ;
 		anim2D.play("mouvement");
-			
+	
+	if mouvement!=Vector2.ZERO && Input.is_action_just_pressed("esquive"):
+		Esquive()
+		
 	velocity = mouvement.normalized()*vitesse; #normalized-> vitesse constante meme en diagonale
 	move_and_slide();
 #endregion DEPLACEMENT & ANIMATION
 
+func Esquive():
+	vitesse = 300
+	$Timer.start(0.2)
+	
+	
 
 #region PROJECTILE 
 @export var objet_projectile : PackedScene
@@ -91,9 +100,10 @@ func Prendre_degat(nombre:int):
 	print(name+" a subit "+str(degat_subit)+ " degats")
 
 func _on_timer_timeout() -> void:
-
-	%CollisionShape2D.set_deferred("desibles",true)
-	%CollisionShape2D.set_deferred("desibles",false)
+	$Timer.stop()
+	vitesse=120
+	#%CollisionShape2D.set_deferred("desibles",true)
+	#%CollisionShape2D.set_deferred("desibles",false)
 
 func _on_hurtbox_area_entered(hitbox: Area2D) -> void:
 	Prendre_degat(hitbox.degats)
