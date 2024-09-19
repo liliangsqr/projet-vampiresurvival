@@ -5,7 +5,10 @@ var direction : Vector2;
 var vitesse : float = 60.0;
 var degats : float 
 var recul : Vector2
-var PV : int =10
+var PV : int =10:
+	set(valeur):
+		PV = valeur
+		$Bare_vie_ennemy.value = valeur
 var elite:bool=false:
 	set(valeur):
 		elite=valeur
@@ -19,6 +22,7 @@ var type : Ennemi :
 		degats = valeur.degat
 		$Hitbox.degats = valeur.degat
 		PV = valeur.PV
+		$Bare_vie_ennemy.max_value = valeur.PV
 
 func _physics_process(delta: float) -> void:
 	# a + de 2000 entité le jeux passe en dessous de 5 fps, on optimise 
