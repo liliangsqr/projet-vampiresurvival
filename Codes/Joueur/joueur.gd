@@ -11,7 +11,8 @@ extends CharacterBody2D
 
 func _physics_process(_delta):
 	Animation_joueur(Deplacement_joueur());
-	;
+	VerrifPause();
+	
 		
 #region DEPLACEMENT & ANIMATION
 func Deplacement_joueur() -> Vector2: 
@@ -41,14 +42,19 @@ func Animation_joueur(mouvement:Vector2):
 		
 	velocity = mouvement.normalized()*vitesse; #normalized-> vitesse constante meme en diagonale
 	move_and_slide();
-#endregion DEPLACEMENT & ANIMATION
+
 
 func Esquive():
 	vitesse = 300
 	$Timer.start(0.2)
 	
+func _on_timer_timeout() -> void:
+	$Timer.stop()
+	vitesse=120
+	#%CollisionShape2D.set_deferred("desibles",true)
+	#%CollisionShape2D.set_deferred("desibles",false)
+#endregion DEPLACEMENT & ANIMATION
 	
-
 #region PROJECTILE 
 @export var objet_projectile : PackedScene
 
@@ -94,17 +100,36 @@ func tir_zone(effectif):
 	
 #endregion PROJECTILE 
 
+#region degatsubits
 func Prendre_degat(nombre:int):
 	var degat_subit = nombre;
 	self.PV -= degat_subit;
 	print(name+" a subit "+str(degat_subit)+ " degats")
-
-func _on_timer_timeout() -> void:
-	$Timer.stop()
-	vitesse=120
-	#%CollisionShape2D.set_deferred("desibles",true)
-	#%CollisionShape2D.set_deferred("desibles",false)
-
+	
 func _on_hurtbox_area_entered(hitbox: Area2D) -> void:
 	Prendre_degat(hitbox.degats)
+
+#endregion degatsubits
 	
+#region INTERFACE/MENU
+
+@onready var pause_menu = $Interface/Pause_menu;
+var pause :bool=false;
+func VerrifPause():
+	
+	if Input.is_action_just_pressed("Pause_menu"):
+		PauseMenu();
+			
+func PauseMenu():
+	if pause:
+		pause_menu.hide();
+		Engine.time_scale =1;
+	else:
+		pause_menu.show();
+		Engine.time_scale =0;
+	pause = !pause	
+		
+
+
+
+#endregion INTERFACE/MENU
