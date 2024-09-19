@@ -4,6 +4,7 @@ class_name Competence
 var cooldown : float
 var texture : Texture2D
 var nom_animation: String
+var degats = 1;
 
 func _init(cible) -> void:
 	cible.cooldown.max_value = cooldown

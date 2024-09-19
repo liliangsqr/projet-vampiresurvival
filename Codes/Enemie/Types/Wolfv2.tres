@@ -7,5 +7,5 @@
 script = ExtResource("1_5xmyw")
 nom = "Loupv2"
 texture = ExtResource("2_7o4yr")
-PV = 0.0
+PV = 5.0
 degat = 5.0

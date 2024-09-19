@@ -7,5 +7,5 @@
 script = ExtResource("1_qnyk2")
 nom = "blob"
 texture = ExtResource("2_alatk")
-PV = 0.0
+PV = 1.0
 degat = 1.0

@@ -7,5 +7,5 @@
 script = ExtResource("1_ihlec")
 nom = "cyclope"
 texture = ExtResource("2_ocdma")
-PV = 0.0
+PV = 7.0
 degat = 10.0

@@ -39,22 +39,13 @@ func Animation_joueur(mouvement:Vector2):
 	move_and_slide();
 #endregion DEPLACEMENT & ANIMATION
 
-func Prendre_degat(nombre):
-	PV-=nombre;
-	print(PV);
-
-func _on_domages_subit_body_entered(body: Node2D) -> void:
-	Prendre_degat(body.degats) # ou degat
-
-func _on_timer_timeout() -> void:
-	%CollisionShape2D.set_deferred("desibles",true)
-	%CollisionShape2D.set_deferred("desibles",false)
 
 #region PROJECTILE 
 @export var objet_projectile : PackedScene
 
-func tir_simple(nom_animation = "simple"):
+func tir_simple(nom_animation = "simple",degats:int =3):
 	var new_projectile = objet_projectile.instantiate();
+	new_projectile.degat =degats; 
 	new_projectile.Lancer_animation(nom_animation);
 	new_projectile.position = global_position
 	new_projectile.direction = (get_global_mouse_position()-global_position).normalized();
@@ -62,15 +53,18 @@ func tir_simple(nom_animation = "simple"):
 
 func tir_multiple(effectif:int=3,delai :float =0.2,nom_animation = "multiple"):
 	for tir in range(effectif):
-		tir_simple(nom_animation)
+		tir_simple(nom_animation,1)
 		await get_tree().create_timer(delai).timeout;
 
 func angleDeTir(angle,i):
 	var new_projectile = objet_projectile.instantiate();
+
 	if i%2==0:
 		new_projectile.Lancer_animation("multiple");
 	else:
+		new_projectile.degat = 20;
 		new_projectile.Lancer_animation("zone");
+		
 	
 	new_projectile.position = global_position
 	new_projectile.direction = Vector2(cos(angle),sin(angle));
@@ -87,5 +81,20 @@ func tir_zone(effectif):
 #	tir_multiple();
 #	await get_tree().create_timer(1).timeout
 #	tir_zone(18);
+#
 	
 #endregion PROJECTILE 
+
+func Prendre_degat(nombre:int):
+	var degat_subit = nombre;
+	self.PV -= degat_subit;
+	print(name+" a subit "+str(degat_subit)+ " degats")
+
+func _on_timer_timeout() -> void:
+
+	%CollisionShape2D.set_deferred("desibles",true)
+	%CollisionShape2D.set_deferred("desibles",false)
+
+func _on_hurtbox_area_entered(hitbox: Area2D) -> void:
+	Prendre_degat(hitbox.degats)
+	

@@ -8654,9 +8654,10 @@ reference_ennemi = ExtResource("2_gqll7")
 
 [node name="Joueur" parent="." instance=ExtResource("1_njttt")]
 disable_mode = 0
+collision_layer = 3
 
 [node name="Area2D" type="StaticBody2D" parent="."]
-visible = false
+collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(19, 637, 192, 474, 444, 475, 437, 457, 456, 444, 475, 453, 476, 512, 588, 514, 590, 448, 611, 445, 625, 462, 624, 481, 892, 480, 893, 497, 927, 499, 925, 515, 973, 516, 974, 532, 989, 530, 989, 549, 1005, 548, 1007, 563, 1020, 562, 1098, 529, 1076, 107, 883, 111, 884, 64, 870, 66, 834, 29, 837, -101, 230, -102, 226, 29, 132, 30, 132, 66, 87, 65, 83, 25, 34, 27, 35, 120, 20, 617, 8, 618, 28, -26, 203, -3, 210, -143, 896, -122, 882, 24, 926, 80, 1123, 90, 1123, 554, 1030, 599, 854, 499, 545, 546)
