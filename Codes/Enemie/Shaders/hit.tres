@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://drm150pdl26ht"]
+
+[ext_resource type="Shader" path="res://Codes/Enemie/Shaders/Shader_hit.gdshader" id="1_iowac"]
+
+[resource]
+shader = ExtResource("1_iowac")
+shader_parameter/active = false

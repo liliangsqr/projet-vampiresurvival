@@ -99,12 +99,17 @@ func tir_zone(effectif):
 #
 	
 #endregion PROJECTILE 
-
+@onready var dfmenu = $Interface/Deathscreen;
 #region degatsubits
 func Prendre_degat(nombre:int):
 	var degat_subit = nombre;
 	self.PV -= degat_subit;
-	print(name+" a subit "+str(degat_subit)+ " degats")
+	
+	if PV <=0:
+		dfmenu.show()
+		get_tree().paused = true
+	else : 
+		print("PV = "+str(PV))
 	
 func _on_hurtbox_area_entered(hitbox: Area2D) -> void:
 	Prendre_degat(hitbox.degats)
@@ -121,14 +126,12 @@ func VerrifPause():
 		PauseMenu();
 			
 func PauseMenu():
-	if pause:
-		pause_menu.hide();
-		Engine.time_scale =1;
-	else:
-		pause_menu.show();
-		Engine.time_scale =0;
+	pause_menu.show();
+	get_tree().paused = true
+
+	#Engine.time_scale =0;
 	pause = !pause	
-		
+
 
 
 

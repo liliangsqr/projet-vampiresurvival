@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b8wvip7sei4d4"]
+[gd_scene load_steps=24 format=3 uid="uid://b8wvip7sei4d4"]
 
 [ext_resource type="Script" path="res://Codes/Joueur/joueur.gd" id="1_kama8"]
 [ext_resource type="PackedScene" uid="uid://bdesynplswtoy" path="res://Codes/Projectiles/projectile.tscn" id="2_h2iwc"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cimp8mkbfr28i" path="res://Codes/Hurtbox.tscn" id="5_jh3f7"]
 [ext_resource type="PackedScene" uid="uid://dt7510yjnmkfs" path="res://Codes/Projectiles/boutton_competence.tscn" id="5_xmdrg"]
 [ext_resource type="PackedScene" uid="uid://bpvsqbbk7bow7" path="res://Codes/Menus/Pause_menu.tscn" id="8_umc13"]
+[ext_resource type="PackedScene" uid="uid://crh8ovpaphila" path="res://Codes/Menus/deathscreen.tscn" id="9_pjywr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtp4a"]
 
@@ -187,6 +188,19 @@ offset_top = 9.0
 offset_right = -41.0
 offset_bottom = 9.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Deathscreen" parent="Interface" instance=ExtResource("9_pjywr")]
+process_mode = 3
+visible = false
+anchors_preset = -1
+anchor_left = 0.412
+anchor_top = 0.327
+anchor_right = 0.52
+anchor_bottom = 1.0
+offset_left = 0.639954
+offset_top = -0.280014
+offset_right = -0.600037
+offset_bottom = 4.0
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

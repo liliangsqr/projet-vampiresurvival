@@ -8598,6 +8598,7 @@ texture = ExtResource("4_l34qo")
 sources/0 = SubResource("TileSetAtlasSource_dioo2")
 
 [node name="World" type="Node2D"]
+process_mode = 1
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_offset = Vector2(515, 235)
@@ -8657,6 +8658,7 @@ disable_mode = 0
 collision_mask = 18
 
 [node name="Area2D" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 16
 collision_mask = 18
 
