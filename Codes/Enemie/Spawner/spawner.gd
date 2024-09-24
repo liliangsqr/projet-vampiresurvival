@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var reference_joueur : CharacterBody2D; # --> 
+@export var reference_joueur : CharacterBody2D; # --> joueur
 @export var reference_ennemi : PackedScene; # -->
 @export var type_ennemis:Array[Ennemi] # --> voir sur le coté ce qu'il y a dedans
 
