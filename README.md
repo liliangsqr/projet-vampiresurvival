@@ -1,3 +1,3 @@
 This is a vampire survival-like project on GODOT.
-**Abilities** AER
-**Mouvement** AZERTY
+**Abilities** A-E-R-shift
+**Mouvement** A-Z-E-R-T-Y
