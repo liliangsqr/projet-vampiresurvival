@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_reesayer_pressed() -> void:
-	get_tree().change_scene_to_file("res://Codes/world.tscn")
+	get_tree().reload_current_scene() #le bouton fonctionne pas 
 
 
 func _on_menu_principal_pressed() -> void:
