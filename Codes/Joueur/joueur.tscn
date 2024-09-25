@@ -1,11 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://b8wvip7sei4d4"]
+[gd_scene load_steps=24 format=3 uid="uid://b8wvip7sei4d4"]
 
 [ext_resource type="Script" path="res://Codes/Joueur/joueur.gd" id="1_kama8"]
 [ext_resource type="PackedScene" uid="uid://bdesynplswtoy" path="res://Codes/Projectiles/projectile.tscn" id="2_h2iwc"]
 [ext_resource type="Texture2D" uid="uid://csdloiyrf740v" path="res://Textures/Joueur/Soldier-Walk.png" id="2_kw3wa"]
 [ext_resource type="Texture2D" uid="uid://dvik8cghco7li" path="res://Textures/Joueur/Soldier-Idle.png" id="3_rykvf"]
 [ext_resource type="Script" path="res://Codes/Joueur/bare_competences.gd" id="5_5md4r"]
+[ext_resource type="PackedScene" uid="uid://cimp8mkbfr28i" path="res://Codes/Hurtbox.tscn" id="5_jh3f7"]
 [ext_resource type="PackedScene" uid="uid://dt7510yjnmkfs" path="res://Codes/Projectiles/boutton_competence.tscn" id="5_xmdrg"]
+[ext_resource type="PackedScene" uid="uid://bpvsqbbk7bow7" path="res://Codes/Menus/Pause_menu.tscn" id="8_umc13"]
+[ext_resource type="PackedScene" uid="uid://crh8ovpaphila" path="res://Codes/Menus/deathscreen.tscn" id="9_pjywr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtp4a"]
 
@@ -106,11 +109,11 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxvjj"]
-
 [node name="Joueur" type="CharacterBody2D"]
 position = Vector2(596, 332)
 disable_mode = 2
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_kama8")
 objet_projectile = ExtResource("2_h2iwc")
 
@@ -122,13 +125,8 @@ sprite_frames = SubResource("SpriteFrames_v6whd")
 animation = &"mouvement"
 frame_progress = 0.0830123
 
-[node name="DomagesSubit" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DomagesSubit"]
-unique_name_in_owner = true
-shape = SubResource("RectangleShape2D_rxvjj")
+[node name="Hurtbox" parent="." instance=ExtResource("5_jh3f7")]
+collision_layer = 2
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -167,6 +165,7 @@ scale = Vector2(0.998295, 1)
 size_flags_horizontal = 4
 size_flags_vertical = 0
 script = ExtResource("5_5md4r")
+metadata/_edit_use_anchors_ = true
 
 [node name="Boutton_Competence" parent="Interface/Bare_competences" instance=ExtResource("5_xmdrg")]
 layout_mode = 2
@@ -177,5 +176,33 @@ layout_mode = 2
 [node name="Boutton_Competence3" parent="Interface/Bare_competences" instance=ExtResource("5_xmdrg")]
 layout_mode = 2
 
-[connection signal="body_entered" from="DomagesSubit" to="." method="_on_domages_subit_body_entered"]
+[node name="Pause_menu" parent="Interface" instance=ExtResource("8_umc13")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = 9.0
+offset_right = -41.0
+offset_bottom = 9.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Deathscreen" parent="Interface" instance=ExtResource("9_pjywr")]
+process_mode = 3
+visible = false
+anchors_preset = -1
+anchor_left = 0.412
+anchor_top = 0.327
+anchor_right = 0.52
+anchor_bottom = 1.0
+offset_left = 0.639954
+offset_top = -0.280014
+offset_right = -0.600037
+offset_bottom = 4.0
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Hurtbox"]

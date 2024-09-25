@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://crh8ovpaphila"]
+
+[ext_resource type="Script" path="res://Codes/Menus/deathscreen.gd" id="1_fsabj"]
+
+[node name="Deathscreen" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+script = ExtResource("1_fsabj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -64.0
+offset_right = 67.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Death" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "VOUS ETES MORT"
+
+[node name="reesayer" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "rejouer"
+
+[node name="menu_principal" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "menu principal"
+
+[node name="Quitter" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "quitter
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/reesayer" to="." method="_on_reesayer_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/menu_principal" to="." method="_on_menu_principal_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quitter" to="." method="_on_quitter_pressed"]

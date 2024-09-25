@@ -7,5 +7,5 @@
 script = ExtResource("1_wod65")
 nom = "orc"
 texture = ExtResource("2_qeapi")
-PV = 0.0
+PV = 10.0
 degat = 20.0

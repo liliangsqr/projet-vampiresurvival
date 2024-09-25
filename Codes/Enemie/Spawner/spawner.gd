@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var reference_joueur : CharacterBody2D; # --> 
+@export var reference_joueur : CharacterBody2D; # --> joueur
 @export var reference_ennemi : PackedScene; # -->
 @export var type_ennemis:Array[Ennemi] # --> voir sur le coté ce qu'il y a dedans
 
@@ -15,8 +15,8 @@ var minutes :int :
 var secondes :int : 
 	set(valeur):
 		secondes=valeur
-		if secondes >=10:
-			secondes -= 10;
+		if secondes >=15:
+			secondes -= 15;
 			minutes +=1;
 		$"%Secondes".text= str(secondes).lpad(2,'0');
 		

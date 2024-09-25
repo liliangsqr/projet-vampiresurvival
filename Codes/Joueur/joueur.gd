@@ -11,7 +11,9 @@ extends CharacterBody2D
 
 func _physics_process(_delta):
 	Animation_joueur(Deplacement_joueur());
-
+	VerrifPause();
+	
+		
 #region DEPLACEMENT & ANIMATION
 func Deplacement_joueur() -> Vector2: 
 	# le mouvement sur l'axe des X
@@ -34,27 +36,31 @@ func Animation_joueur(mouvement:Vector2):
 	elif mouvement.x < 0  :
 		anim2D.flip_h = true ;
 		anim2D.play("mouvement");
-			
+	
+	if mouvement!=Vector2.ZERO && Input.is_action_just_pressed("esquive"):
+		Esquive()
+		
 	velocity = mouvement.normalized()*vitesse; #normalized-> vitesse constante meme en diagonale
 	move_and_slide();
-#endregion DEPLACEMENT & ANIMATION
 
-func Prendre_degat(nombre):
-	PV-=nombre;
-	print(PV);
 
-func _on_domages_subit_body_entered(body: Node2D) -> void:
-	Prendre_degat(body.degats) # ou degat
-
+func Esquive():
+	vitesse = 300
+	$Timer.start(0.2)
+	
 func _on_timer_timeout() -> void:
-	%CollisionShape2D.set_deferred("desibles",true)
-	%CollisionShape2D.set_deferred("desibles",false)
-
+	$Timer.stop()
+	vitesse=120
+	#%CollisionShape2D.set_deferred("desibles",true)
+	#%CollisionShape2D.set_deferred("desibles",false)
+#endregion DEPLACEMENT & ANIMATION
+	
 #region PROJECTILE 
 @export var objet_projectile : PackedScene
 
-func tir_simple(nom_animation = "simple"):
+func tir_simple(nom_animation = "simple",degats:int =3):
 	var new_projectile = objet_projectile.instantiate();
+	new_projectile.degat =degats; 
 	new_projectile.Lancer_animation(nom_animation);
 	new_projectile.position = global_position
 	new_projectile.direction = (get_global_mouse_position()-global_position).normalized();
@@ -62,15 +68,18 @@ func tir_simple(nom_animation = "simple"):
 
 func tir_multiple(effectif:int=3,delai :float =0.2,nom_animation = "multiple"):
 	for tir in range(effectif):
-		tir_simple(nom_animation)
+		tir_simple(nom_animation,1)
 		await get_tree().create_timer(delai).timeout;
 
 func angleDeTir(angle,i):
 	var new_projectile = objet_projectile.instantiate();
+
 	if i%2==0:
 		new_projectile.Lancer_animation("multiple");
 	else:
+		new_projectile.degat = 20;
 		new_projectile.Lancer_animation("zone");
+		
 	
 	new_projectile.position = global_position
 	new_projectile.direction = Vector2(cos(angle),sin(angle));
@@ -87,5 +96,43 @@ func tir_zone(effectif):
 #	tir_multiple();
 #	await get_tree().create_timer(1).timeout
 #	tir_zone(18);
+#
 	
 #endregion PROJECTILE 
+@onready var dfmenu = $Interface/Deathscreen;
+#region degatsubits
+func Prendre_degat(nombre:int):
+	var degat_subit = nombre;
+	self.PV -= degat_subit;
+	
+	if PV <=0:
+		dfmenu.show()
+		get_tree().paused = true
+	else : 
+		print("PV = "+str(PV))
+	
+func _on_hurtbox_area_entered(hitbox: Area2D) -> void:
+	Prendre_degat(hitbox.degats)
+
+#endregion degatsubits
+	
+#region INTERFACE/MENU
+
+@onready var pause_menu = $Interface/Pause_menu;
+var pause :bool=false;
+func VerrifPause():
+	
+	if Input.is_action_just_pressed("Pause_menu"):
+		PauseMenu();
+			
+func PauseMenu():
+	pause_menu.show();
+	get_tree().paused = true
+
+	#Engine.time_scale =0;
+	pause = !pause	
+
+
+
+
+#endregion INTERFACE/MENU
