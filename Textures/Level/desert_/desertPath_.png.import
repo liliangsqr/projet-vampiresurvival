@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqngg8huukso7"
-path="res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"
+uid="uid://dq2jxl1t3wjwt"
+path="res://.godot/imported/desertPath_.png-b75b98b65a461178d93fb40a2706ceae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Joueur/PinguinAnimationFinie.png"
-dest_files=["res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"]
+source_file="res://Textures/Level/desert_/desertPath_.png"
+dest_files=["res://.godot/imported/desertPath_.png-b75b98b65a461178d93fb40a2706ceae.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqngg8huukso7"
-path="res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"
+uid="uid://dal7px1643y6v"
+path="res://.godot/imported/Pyramid with Door.png-f18f78d3bfafad59e67bd86f6abcc38a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Joueur/PinguinAnimationFinie.png"
-dest_files=["res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"]
+source_file="res://Textures/Level/Pixel Art Ancient Egypt/Pyramid with Door.png"
+dest_files=["res://.godot/imported/Pyramid with Door.png-f18f78d3bfafad59e67bd86f6abcc38a.ctex"]
 
 [params]
 

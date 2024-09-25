@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqngg8huukso7"
-path="res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"
+uid="uid://dp2k1d5y38kep"
+path="res://.godot/imported/swamp_ [bridgeHorizontal].png-604c7b691d1c597540bc55dcd0828de7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Joueur/PinguinAnimationFinie.png"
-dest_files=["res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"]
+source_file="res://Textures/Level/swamp_/swamp_ [bridgeHorizontal].png"
+dest_files=["res://.godot/imported/swamp_ [bridgeHorizontal].png-604c7b691d1c597540bc55dcd0828de7.ctex"]
 
 [params]
 

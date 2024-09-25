@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqngg8huukso7"
-path="res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"
+uid="uid://dogfsa736sgem"
+path="res://.godot/imported/forest_ [bridgeAnimatedTiles].png-91b7c048ce63b6f5214bf3569c0dfd26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Joueur/PinguinAnimationFinie.png"
-dest_files=["res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"]
+source_file="res://Textures/Level/forest_/forest_ [bridgeAnimatedTiles].png"
+dest_files=["res://.godot/imported/forest_ [bridgeAnimatedTiles].png-91b7c048ce63b6f5214bf3569c0dfd26.ctex"]
 
 [params]
 

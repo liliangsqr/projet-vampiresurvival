@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqngg8huukso7"
-path="res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"
+uid="uid://cq6yg7sbbpa3o"
+path="res://.godot/imported/Vase.png-596cabeff2e2b2be86e9b9556f1ec5cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Joueur/PinguinAnimationFinie.png"
-dest_files=["res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"]
+source_file="res://Textures/Level/Pixel Art Ancient Egypt/Vase.png"
+dest_files=["res://.godot/imported/Vase.png-596cabeff2e2b2be86e9b9556f1ec5cc.ctex"]
 
 [params]
 

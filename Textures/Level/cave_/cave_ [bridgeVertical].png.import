@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqngg8huukso7"
-path="res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"
+uid="uid://bensyfuxnbb66"
+path="res://.godot/imported/cave_ [bridgeVertical].png-daf1ddbc992863c21357f4617a062785.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Joueur/PinguinAnimationFinie.png"
-dest_files=["res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"]
+source_file="res://Textures/Level/cave_/cave_ [bridgeVertical].png"
+dest_files=["res://.godot/imported/cave_ [bridgeVertical].png-daf1ddbc992863c21357f4617a062785.ctex"]
 
 [params]
 

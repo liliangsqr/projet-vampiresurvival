@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqngg8huukso7"
-path="res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"
+uid="uid://2ra3nowlrjw2"
+path="res://.godot/imported/quickSand_.png-0fa5c39c566447f731bb2783c1ff4211.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Joueur/PinguinAnimationFinie.png"
-dest_files=["res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"]
+source_file="res://Textures/Level/desert_/quickSand_.png"
+dest_files=["res://.godot/imported/quickSand_.png-0fa5c39c566447f731bb2783c1ff4211.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqngg8huukso7"
-path="res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"
+uid="uid://bnna7vetr4yb2"
+path="res://.godot/imported/taiga_ [bridgeHorizontal].png-2fea666842e9f2f2654a5fd3069b7af3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Joueur/PinguinAnimationFinie.png"
-dest_files=["res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"]
+source_file="res://Textures/Level/taiga_/taiga_ [bridgeHorizontal].png"
+dest_files=["res://.godot/imported/taiga_ [bridgeHorizontal].png-2fea666842e9f2f2654a5fd3069b7af3.ctex"]
 
 [params]
 

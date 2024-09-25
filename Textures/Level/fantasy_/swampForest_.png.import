@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqngg8huukso7"
-path="res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"
+uid="uid://bsji3q6674sjl"
+path="res://.godot/imported/swampForest_.png-17d2e36241e46a49bdc806a650d4e641.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Joueur/PinguinAnimationFinie.png"
-dest_files=["res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"]
+source_file="res://Textures/Level/fantasy_/swampForest_.png"
+dest_files=["res://.godot/imported/swampForest_.png-17d2e36241e46a49bdc806a650d4e641.ctex"]
 
 [params]
 

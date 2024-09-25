@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqngg8huukso7"
-path="res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"
+uid="uid://d4ng2dshah4l5"
+path="res://.godot/imported/cave_.png-68b2513e3252985cc841244e58afd52e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Joueur/PinguinAnimationFinie.png"
-dest_files=["res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"]
+source_file="res://Textures/Level/cave_/cave_.png"
+dest_files=["res://.godot/imported/cave_.png-68b2513e3252985cc841244e58afd52e.ctex"]
 
 [params]
 

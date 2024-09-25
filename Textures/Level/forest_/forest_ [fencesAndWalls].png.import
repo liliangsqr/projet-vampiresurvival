@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqngg8huukso7"
-path="res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"
+uid="uid://posgg7xhdx70"
+path="res://.godot/imported/forest_ [fencesAndWalls].png-5561e7a02c59967d548844178d9f220a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Joueur/PinguinAnimationFinie.png"
-dest_files=["res://.godot/imported/PinguinAnimationFinie.png-6a084ca59afc3ad9d36fd85abce8ba58.ctex"]
+source_file="res://Textures/Level/forest_/forest_ [fencesAndWalls].png"
+dest_files=["res://.godot/imported/forest_ [fencesAndWalls].png-5561e7a02c59967d548844178d9f220a.ctex"]
 
 [params]
 
