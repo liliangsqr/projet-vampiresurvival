@@ -9,11 +9,11 @@
 [node name="World" type="Node2D"]
 process_mode = 1
 
+[node name="MapClassique" parent="." instance=ExtResource("2_3rqob")]
+
 [node name="MapDLC" parent="." instance=ExtResource("1_kxuh8")]
 position = Vector2(-1459, 4306)
 scale = Vector2(2, 2)
-
-[node name="MapClassique" parent="." instance=ExtResource("2_3rqob")]
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("reference_joueur") instance=ExtResource("3_ue0ua")]
 position = Vector2(594, 333)
