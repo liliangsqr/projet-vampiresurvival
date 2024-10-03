@@ -109,7 +109,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Joueur" type="CharacterBody2D"]
+[node name="Joueur" type="CharacterBody2D" groups=["Persist"]]
 position = Vector2(596, 332)
 disable_mode = 2
 collision_layer = 2
@@ -128,9 +128,9 @@ frame_progress = 0.0830123
 [node name="Hurtbox" parent="." instance=ExtResource("5_jh3f7")]
 collision_layer = 2
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." groups=["Persist"]]
 
-[node name="Bare_vie" type="ProgressBar" parent="."]
+[node name="Bare_vie" type="ProgressBar" parent="." groups=["Persist"]]
 unique_name_in_owner = true
 modulate = Color(0, 1, 0, 1)
 self_modulate = Color(0, 1, 0, 1)
