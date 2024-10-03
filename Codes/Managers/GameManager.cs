@@ -1,33 +1,36 @@
 using Godot;
 using System;
 
-//c'est un singleton
-
 public partial class GameManager : SceneTree
 {
-	private static GameManager _gameManager;
-	private LevelManager _levelManager;
-	private SaveManager _saveManager;
+	static GameManager game;
+	private LevelManager level;
+	private SaveManager save;
+	
 	private GameManager(){}
 
-	public static GameManager Instance(){
-		
-			if(_gameManager==null){
-				_gameManager=new GameManager();
-			}
-			return _gameManager;
-
+	public override void _Initialize()
+	{
+		GD.Print("Initialized:");
+		getInstance();
+		level = new LevelManager();
+		save = new SaveManager();
+		level.load("res://Codes/Menus/MenuPrincipal.tscn");
+	}
+	public static GameManager getInstance(){
+	
+		if (game == null){
+			game = new GameManager();
+		}
+		return game;	
 	}
 	
-	public void _Initialize(){
-			_levelmanager = new LevelManager();
-			_saveManager = new SaveManager();
-			AddChild(_levelManager);
-			AddChild(_SaveManager);
+	public LevelManager getLevelManager(){
+		return level;
 	}
-
-	public static Get_Instance(){return _gameManager;}
-	public LevelManager Get_LevelManager(){ return _levelManager;}
-	public SaveManager Get_SaveManager(){ return _saveManager;}
-
+	
+	public LevelManager getSaveManager(){
+		return save;
+	}
+		
 }

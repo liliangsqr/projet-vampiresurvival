@@ -6,7 +6,8 @@ public partial class LevelManager : Node2D
 	public void load(string str_scene){
 		try 
 		{
-		  GetTree().change_scene_to_file(str_scene);
+			Node scene = ResourceLoader.Load<PackedScene>(str_scene).Instantiate();
+			GetTree().Root.AddChild(scene);
 		}
 		catch (Exception e)
 		{
