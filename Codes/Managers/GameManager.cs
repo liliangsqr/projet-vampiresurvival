@@ -5,29 +5,29 @@ using System;
 
 public partial class GameManager : SceneTree
 {
-	private:
-		static GameManager _gameManager;
-		LevelManager _levelmanager;
-		SaveManager _saveManager;
-		GameManager();
+	private static GameManager _gameManager;
+	private LevelManager _levelManager;
+	private SaveManager _saveManager;
+	private GameManager(){}
+
+	public static GameManager Instance(){
 		
-	public:
-		static GameManager Instance(){
-			get {	
-				if(_gameManager==null)_gameManager=new GameManager();
-					return _gameManager;
+			if(_gameManager==null){
+				_gameManager=new GameManager();
 			}
-			//set static
-		}
-		void _Initialize(){
+			return _gameManager;
+
+	}
+	
+	public void _Initialize(){
 			_levelmanager = new LevelManager();
 			_saveManager = new SaveManager();
-			AddChild(_levelmanager);
+			AddChild(_levelManager);
 			AddChild(_SaveManager);
-		}
+	}
 
-		 static Get_Instance();
-		 Get_LevelManager(){ return _levelmanager};
-		 Get_SaveManager(){ return _saveManager};
+	public static Get_Instance(){return _gameManager;}
+	public LevelManager Get_LevelManager(){ return _levelManager;}
+	public SaveManager Get_SaveManager(){ return _saveManager;}
 
 }
