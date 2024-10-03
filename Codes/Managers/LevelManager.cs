@@ -6,7 +6,7 @@ public partial class LevelManager : Node2D
 	public void load(string str_scene){
 		try 
 		{
-		  change_scene_to_file(str_scene);
+		  GetTree().change_scene_to_file(str_scene);
 		}
 		catch (Exception e)
 		{
