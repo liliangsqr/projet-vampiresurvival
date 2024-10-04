@@ -29,7 +29,7 @@ public partial class GameManager : SceneTree
 		return level;
 	}
 	
-	public LevelManager getSaveManager(){
+	public SaveManager getSaveManager(){
 		return save;
 	}
 		
