@@ -11,14 +11,15 @@ public partial class GameManager : SceneTree
 
 	public override void _Initialize()
 	{
-		GD.Print("Initialized:");
+		GD.Print("Initialized:...");
 		getInstance();
 		level = new LevelManager();
 		save = new SaveManager();
 		level.load("res://Codes/Menus/MenuPrincipal.tscn");
+		GD.Print("Initialization finish !");
 	}
-	public static GameManager getInstance(){
 	
+	public static GameManager getInstance(){
 		if (game == null){
 			game = new GameManager();
 		}
@@ -29,7 +30,18 @@ public partial class GameManager : SceneTree
 		return level;
 	}
 	
-	public LevelManager getSaveManager(){
+	public ChangeLevel(string _page){
+		try{
+			//mieux est de mettre une liste des pages, si c'est pas dedans on charge rien
+			if (page==null){return;}
+			else{
+				getLevelManager.load(_page)
+			}
+		}
+		//ajouter une erreur si page est null
+	}
+	
+	public SaveManager getSaveManager(){
 		return save;
 	}
 		
