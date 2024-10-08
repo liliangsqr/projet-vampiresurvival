@@ -136,3 +136,17 @@ func PauseMenu():
 
 
 #endregion INTERFACE/MENU
+
+#region Save
+
+func save():
+	var save_dict = {
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : position.x, 
+		"pos_y" : position.y,
+		"pv" : PV,
+	}
+	return save_dict
+
+#endregion Save
