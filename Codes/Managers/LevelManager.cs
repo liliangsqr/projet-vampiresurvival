@@ -11,7 +11,8 @@ public partial class LevelManager : Node2D
 		}
 		catch (Exception e)
 		{
-		  GD.Print("Level can't be found");
+		  GD.Print("Error loading level");
+		  GD.Print(e);	
 		}
 		
 	}
