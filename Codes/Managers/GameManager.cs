@@ -30,16 +30,6 @@ public partial class GameManager : SceneTree
 		return level;
 	}
 	
-	public ChangeLevel(string _page){
-		try{
-			//mieux est de mettre une liste des pages, si c'est pas dedans on charge rien
-			if (page==null){return;}
-			else{
-				getLevelManager.load(_page)
-			}
-		}
-		//ajouter une erreur si page est null
-	}
 	
 	public SaveManager getSaveManager(){
 		return save;
