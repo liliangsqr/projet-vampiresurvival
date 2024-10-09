@@ -16,3 +16,6 @@ func _on_quitter_pressed() -> void:
 func _on_continuer_pressed() -> void:
 	get_tree().paused = false
 	hide()
+
+func _on_saugarder_quitter_pressed() -> void:
+	pass # Replace with function body.
