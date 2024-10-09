@@ -47,6 +47,7 @@ text = "Quitter"
 
 [node name="SaugarderQuitter" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+text = "Sauvegarder & Quitter"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Continuer" to="." method="_on_continuer_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Option" to="." method="_on_option_pressed"]

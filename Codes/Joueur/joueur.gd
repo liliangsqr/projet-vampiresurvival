@@ -106,8 +106,8 @@ func Prendre_degat(nombre:int):
 	self.PV -= degat_subit;
 	
 	if PV <=0:
-		dfmenu.show()
-		get_tree().paused = true
+		CustomGameLoop.GetInstance().GetLevelManager().SwitchPauseLevel();
+		CustomGameLoop.GetInstance().GetLevelManager().LoadLevel("res://Codes/Menus/deathscreen.tscn")
 	else : 
 		print("PV = "+str(PV))
 	
@@ -119,18 +119,15 @@ func _on_hurtbox_area_entered(hitbox: Area2D) -> void:
 #region INTERFACE/MENU
 
 @onready var pause_menu = $Interface/Pause_menu;
-var pause :bool=false;
+
 func VerrifPause():
-	
 	if Input.is_action_just_pressed("Pause_menu"):
 		PauseMenu();
 			
 func PauseMenu():
-	pause_menu.show();
-	get_tree().paused = true
+	pause_menu.show(); # le menu faisant parti du jour on l'affiche pas via le level manager ou alors il faut reussir a faire des superposition dans le levelmanager
+	CustomGameLoop.GetInstance().GetLevelManager().SwitchPauseLevel()
 
-	#Engine.time_scale =0;
-	pause = !pause	
 
 
 

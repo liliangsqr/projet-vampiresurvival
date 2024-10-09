@@ -5,7 +5,7 @@ public partial class LevelManager : Node
 {
 
 	public SceneTree game_manager =  CustomGameLoop.GetInstance();
-   
+	private Control PauseMenu;
 	
 	public void LoadLevel(string _chemin)
 	{
@@ -25,5 +25,15 @@ public partial class LevelManager : Node
 		GD.Print($"Loaded scene: {niveau}");
 	}
 
+	public void SwitchPauseLevel(){
+		if (GetTree().Paused)
+		{
+			GetTree().Paused = false;
+		}
+		else
+		{
+			GetTree().Paused = true;
+		}
+	}
 	
 }

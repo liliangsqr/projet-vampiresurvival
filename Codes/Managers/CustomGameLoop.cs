@@ -8,14 +8,13 @@ public partial class CustomGameLoop : SceneTree
 	private LevelManager _levelManager;
 	private SaveManager _saveManager;
 
-	public CustomGameLoop()
-	{
+	public CustomGameLoop(){
+		
 		_instance = this;
 		GD.Print("CustomGameLoop constructor called");	
 	}
 
-	public override void _Initialize()
-	{
+	public override void _Initialize(){
 		GD.Print("CustomGameLoop ready");
 		
 		_levelManager = new LevelManager();
@@ -29,23 +28,23 @@ public partial class CustomGameLoop : SceneTree
 		_levelManager.LoadLevel("res://Codes/Menus/MenuPrincipal.tscn");
 	}
 
-	public void CloseGame()
-	{
+
+	public void CloseGame(){
+		
 		Root.GetTree().Quit();
 	}
 	
-	public static CustomGameLoop GetInstance()
-	{
+	public static CustomGameLoop GetInstance(){
+		
 		return _instance;
 	}
 
-	public LevelManager GetLevelManager()
-	{
+	public LevelManager GetLevelManager(){
+		
 		return _levelManager;
 	}
 
-	public SaveManager GetSaveManager()
-	{
+	public SaveManager GetSaveManager(){
 		return _saveManager;
 	}
 }
