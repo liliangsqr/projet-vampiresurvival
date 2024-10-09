@@ -1,4 +1,6 @@
 extends CharacterBody2D
+class_name Player
+
 
 @onready var vitesse : float = 120
 @onready var PV: int = 100:

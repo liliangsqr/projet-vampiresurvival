@@ -1,7 +1,7 @@
 extends Control
 
 func _on_continuer_pressed() -> void:
-	
+	CustomGameLoop.GetInstance().GetSaveManager().LoadSave("res://save/save.json");
 	#load du fichier sauvegarde +
 	#afficher le jeu 
 	pass 

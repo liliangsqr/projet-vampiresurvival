@@ -16,6 +16,10 @@ run/main_loop_type="CustomGameLoop"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerStats="*res://Codes/Joueur/PlayerStats.cs"
+
 [display]
 
 window/size/viewport_width=1280
