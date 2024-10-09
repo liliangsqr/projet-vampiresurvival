@@ -42,6 +42,8 @@ public partial class SaveManager : Node2D
 			
 			var saveFile = FileAccess.Open(filename, FileAccess.ModeFlags.Read);
 			
+			var packedLevel = GD.Load<PackedScene>("res://Codes/world.tscn");
+			
 			while (saveFile.GetPosition() < saveFile.GetLength()){
 				
 				GD.Print("Line : ", saveFile.GetPosition());
@@ -58,7 +60,7 @@ public partial class SaveManager : Node2D
 
 				// Get the data from the JSON object.
 				var nodeData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)json.Data);
-				var packedLevel = GD.Load<PackedScene>(nodeData["Parent"].ToString());
+				
 				
 				GD.Print("Packed Level : ", packedLevel);
 				
@@ -70,14 +72,19 @@ public partial class SaveManager : Node2D
 				
 				foreach (var (key, value) in nodeData)
 					{
-						if (key == "Filename" || key == "Parent" || key == "PosX" || key == "PosY" || key == "Classe")
+						if (key == "Filename" || key == "PosX" || key == "PosY" || key == "Classe")
 						{
 							continue;
 						}
 						level.GetNode((string)nodeData["Classe"]).Set(key, value);
 					}
 				
-				CustomGameLoop.GetInstance().Root.AddChild(level);
+				var package = new PackedScene();
+				var error = package.Pack(level);
+				
+				CustomGameLoop.GetInstance().ChangeSceneToPacked(package);
+				
+				//CustomGameLoop.GetInstance().Root.AddChild(level);
 				
 				//GD.Print("Trying to insert saved pos");
 				//GD.Print("Pos x : ",nodeData["Pos_x"], " Pos y : ",nodeData["Pos_y"]);
