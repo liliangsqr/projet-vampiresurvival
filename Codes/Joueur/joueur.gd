@@ -138,11 +138,12 @@ func PauseMenu():
 
 func save():
 	var save_dict = {
-		"filename" : get_scene_file_path(),
-		"parent" : get_parent().get_path(),
-		"pos_x" : position.x, 
-		"pos_y" : position.y,
-		"pv" : PV,
+		"Filename" : get_scene_file_path(),
+		"Classe": "Joueur",
+		"Parent" : get_parent().get_scene_file_path(),
+		"Pos_x" : position.x, 
+		"Pos_y" : position.y,
+		"PV" : PV,
 	}
 	return save_dict
 

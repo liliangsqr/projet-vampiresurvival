@@ -1,1 +1,1 @@
-{"filename":"res://Codes/Joueur/joueur.tscn","parent":"/root/World","pos_x":480.544677734375,"pos_y":320.298522949219,"pv":99}
+{"Classe":"Joueur","Filename":"res://Codes/Joueur/joueur.tscn","PV":100,"Parent":"res://Codes/world.tscn","Pos_x":512.542724609375,"Pos_y":249.348815917969}

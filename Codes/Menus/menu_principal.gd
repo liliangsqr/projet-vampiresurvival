@@ -3,7 +3,9 @@ extends Control
 func _on_continuer_pressed() -> void:
 	
 	#load du fichier sauvegarde +
-	#afficher le jeu 
+	#afficher le jeu 	
+	CustomGameLoop.GetInstance().GetSaveManager().load("res://save/save.json")
+	
 	pass 
 
 func _on_nouvelle_partie_pressed() -> void:
