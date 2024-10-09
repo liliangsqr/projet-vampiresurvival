@@ -12,12 +12,9 @@ config_version=5
 
 config/name="PROJET VampireSurvival"
 run/main_scene="res://Codes/Menus/MenuPrincipal.tscn"
+run/main_loop_type="CustomGameLoop"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
-
-[autoload]
-
-GameManager="*res://Codes/Managers/GameManager.cs"
 
 [display]
 
