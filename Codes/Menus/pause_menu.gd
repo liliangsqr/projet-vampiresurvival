@@ -16,8 +16,7 @@ func _on_quitter_pressed() -> void:
 	CustomGameLoop.GetInstance().CloseGame()
 
 func _on_saugarder_quitter_pressed() -> void:
-	
 	#fonction qui sauvegarde 
-	
+	CustomGameLoop.GetInstance().GetSaveManager().save("res://save/save.json")
 	CustomGameLoop.GetInstance().CloseGame()
-	pass # Replace with function body.
+	
