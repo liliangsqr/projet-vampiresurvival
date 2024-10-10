@@ -1,15 +1,12 @@
 extends Control
 
-
-
 func _on_reesayer_pressed() -> void:
-	get_tree().reload_current_scene() #le bouton fonctionne pas 
-
+	CustomGameLoop.GetInstance().GetLevelManager().LoadLevel("res://Codes/world.tscn")
+	CustomGameLoop.GetInstance().GetLevelManager().SwitchPauseLevel();
 
 func _on_menu_principal_pressed() -> void:
-		get_tree().change_scene_to_file("res://Codes/Menus/MenuPrincipal.tscn")
-
-
+	CustomGameLoop.GetInstance().GetLevelManager().LoadLevel("res://Codes/Menus/MenuPrincipal.tscn")
+	CustomGameLoop.GetInstance().GetLevelManager().SwitchPauseLevel();
 
 func _on_quitter_pressed() -> void:
 	get_tree().quit()
