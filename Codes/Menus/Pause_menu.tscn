@@ -45,7 +45,12 @@ text = "Retour menu principal"
 layout_mode = 2
 text = "Quitter"
 
+[node name="SaugarderQuitter" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sauvegarder & Quitter"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Continuer" to="." method="_on_continuer_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu_Principal" to="." method="_on_menu_principal_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quitter" to="." method="_on_quitter_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SaugarderQuitter" to="." method="_on_saugarder_quitter_pressed"]

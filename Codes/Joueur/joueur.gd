@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-@onready var vitesse : float = 120
-@onready var PV: int = 100:
+@onready var joueur_statistique = $JoueurStatistique
+
+@onready var vitesse : float = joueur_statistique.Vitesse
+@onready var PV: int = joueur_statistique.PV:
 	set(valeur):
 		PV=valeur
 		%Bare_vie.value = valeur
@@ -10,6 +12,7 @@ extends CharacterBody2D
 @onready var anim2D = $AnimatedSprite2D
 
 func _physics_process(_delta):
+	PV = joueur_statistique.PV
 	Animation_joueur(Deplacement_joueur());
 	VerrifPause();
 	
@@ -103,11 +106,13 @@ func tir_zone(effectif):
 #region degatsubits
 func Prendre_degat(nombre:int):
 	var degat_subit = nombre;
-	self.PV -= degat_subit;
+	joueur_statistique.PV -= degat_subit;
 	
-	if PV <=0:
-		dfmenu.show()
-		get_tree().paused = true
+	if joueur_statistique.PV <=0:
+		
+		CustomGameLoop.GetInstance().GetLevelManager().SwitchPauseLevel();
+		CustomGameLoop.GetInstance().GetLevelManager().LoadLevel("res://Codes/Menus/deathscreen.tscn")
+		
 	else : 
 		print("PV = "+str(PV))
 	
@@ -119,20 +124,31 @@ func _on_hurtbox_area_entered(hitbox: Area2D) -> void:
 #region INTERFACE/MENU
 
 @onready var pause_menu = $Interface/Pause_menu;
-var pause :bool=false;
+
 func VerrifPause():
-	
 	if Input.is_action_just_pressed("Pause_menu"):
 		PauseMenu();
 			
 func PauseMenu():
-	pause_menu.show();
-	get_tree().paused = true
+	pause_menu.show(); # le menu faisant parti du jour on l'affiche pas via le level manager ou alors il faut reussir a faire des superposition dans le levelmanager
+	CustomGameLoop.GetInstance().GetLevelManager().SwitchPauseLevel()
 
-	#Engine.time_scale =0;
-	pause = !pause	
 
 
 
 
 #endregion INTERFACE/MENU
+
+#region Save
+
+func save():
+	var save_dict = {
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : position.x, 
+		"pos_y" : position.y,
+		"pv" : PV,
+	}
+	return save_dict
+
+#endregion Save
