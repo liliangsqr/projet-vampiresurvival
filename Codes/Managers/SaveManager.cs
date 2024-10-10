@@ -33,13 +33,13 @@ public partial class SaveManager : Node2D
 	
 	public void LoadSave(string filename)
 	{
-		GD.Print("->LoadSave() ");
+		GD.Print("┌-------------------------------------------- LoadSave()-------------------------------------------┐");
 		if (!FileAccess.FileExists(filename))
 		{
 			GD.Print("Save file does not exist");
 			return;
 		}
-
+		
 		using var saveFile = FileAccess.Open(filename, FileAccess.ModeFlags.Read);
 		if (saveFile != null)
 		{
@@ -48,11 +48,11 @@ public partial class SaveManager : Node2D
 
 			if (_deserializePlayerStats != null)
 			{
-				GD.Print("Player Stats Loaded:");
-				GD.Print("PV: " + _deserializePlayerStats.PV);
-				GD.Print("Vitesse: " + _deserializePlayerStats.Vitesse);
-				GD.Print("Position X: " + _deserializePlayerStats.PositionX);
-				GD.Print("Position Y: " + _deserializePlayerStats.PositionY);
+				GD.Print("| Contenu du JSON:");
+				GD.Print("|		PV: " + _deserializePlayerStats.PV);
+				GD.Print("|		Vitesse: " + _deserializePlayerStats.Vitesse);
+				GD.Print("|		Position X: " + _deserializePlayerStats.SpawnX);
+				GD.Print("|		Position Y: " + _deserializePlayerStats.SpawnY);
 				UpdatePlayerStats();
 			}
 			else
@@ -60,22 +60,30 @@ public partial class SaveManager : Node2D
 				GD.Print("Player Stats pas Loaded:");
 			}
 		}
+		GD.Print("└---------------------------------------------------------------------------------------------------┘");
+
 	}
 	
 	private void UpdatePlayerStats()
 	{
-		GD.Print("Entre dans la fonction UpdatePlayerStats ");
-		var joueur = CustomGameLoop.GetInstance().GetJoueur();
+		GD.Print("| -> Entre dans la fonction UpdatePlayerStats ");
+		CharacterBody2D joueur = CustomGameLoop.GetInstance().GetJoueur();
+		
+		GD.Print($"|		Le joueur est :"+joueur.Name +" "+ joueur);
+
 		if (joueur != null)
 		{
 			var joueurStatistique = joueur.GetNode<JoueurStatistique>("JoueurStatistique");
+			GD.Print($"|		La Node cible est :" +joueurStatistique.Name +" "+ joueurStatistique );
+
 			if (joueurStatistique != null)
 			{
 				joueurStatistique.PV = _deserializePlayerStats.PV;
 				joueurStatistique.Vitesse = _deserializePlayerStats.Vitesse;
-				joueurStatistique.PositionX = _deserializePlayerStats.PositionX;
-				joueurStatistique.PositionY = _deserializePlayerStats.PositionY;
+				joueurStatistique.SpawnX = _deserializePlayerStats.SpawnX;
+				joueurStatistique.SpawnY = _deserializePlayerStats.SpawnY;
 				GD.Print("Player stats updated in the scene.");
+				joueur.Position = new Vector2((float)_deserializePlayerStats.SpawnX, (float)_deserializePlayerStats.SpawnY);
 			}
 			else
 			{

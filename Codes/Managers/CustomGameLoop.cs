@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Security.Cryptography;
 
 [GlobalClass]
 public partial class CustomGameLoop : SceneTree
@@ -53,62 +54,32 @@ public partial class CustomGameLoop : SceneTree
 
 	public void SetJoueur()
 	{
-		Current();
-		GD.Print("-> fonction SetJoueur()");
+		GD.Print("┌-------------------------------- SetJoueur()-------------------------------┐");
 		
-		
-		_joueur = CurrentScene.GetNode<CharacterBody2D>("World/Joueur");
-		
-		GD.Print($"je joueur est :" + _joueur);
+		_joueur = CurrentScene.GetNode<CharacterBody2D>("Joueur");
 		
 		if (_joueur != null)
 		{
-			GD.Print("Joueur trouvé et assigné.");
+			GD.Print($"| je joueur est : " +_joueur.Name+" "+ _joueur);
 		}
 		else
 		{
-			GD.PrintErr("Erreur: Joueur non trouvé dans la scène.");
+			GD.PrintErr("| Erreur: Joueur non trouvé dans la scène.");
 		}
-		
-		GD.Print("-> out fonction SetJoueur()");
+		GD.Print("└---------------------------------------------------------------------------┘");
 	}
 	
 	public void OnContinueButtonPressed()
 	{
-		GD.Print("-> fonction OnContinueButtonPressed()");
-		
-		//On change la scenePrincipale 
+		GD.Print("Scène actuelle avant ajout : " + GetRoot().GetTree().CurrentScene.SceneFilePath);
 		_levelManager.LoadLevel("res://Codes/world.tscn");
-
-		// On verrifie si ca change bien 
-		var currentScene = GetRoot().GetTree().CurrentScene;
-		if (currentScene != null)
-		{
-			SetJoueur();
-			Current();
-			_saveManager.LoadSave("res://save/save.json");
-		}
-		else
-		{
-			GD.PrintErr("Erreur: Scène actuelle non trouvée après le chargement.");
-		}
+		GD.Print("Scène actuelle apres ajout : " + GetRoot().GetTree().CurrentScene.SceneFilePath);
+		SetJoueur();
+		_saveManager.LoadSave("res://save/save.json");
 	}
 	
 	public CharacterBody2D GetJoueur() 
 	{
 		return _joueur;
 	}
-	
-	 public void Current()
-	 {
-		 var currentScene = GetRoot().GetTree().CurrentScene;
-		 if (currentScene != null)
-		 {
-			 GD.Print("Current scene path: " + currentScene.SceneFilePath);
-		 }
-		 else
-		 {
-			 GD.PrintErr("Error: Current scene not found.");
-		 }
-	 }
 }

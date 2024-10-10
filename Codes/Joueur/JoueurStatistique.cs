@@ -5,14 +5,14 @@ using System.Text.Json.Serialization;
 public partial class JoueurStatistique : Node
 {
 	[JsonPropertyName("pv")]
-	public int PV { get; set; } = 75;
+	public int PV { get; set; } = 100;
 
 	[JsonPropertyName("vitesse")]
 	public int Vitesse { get; set; } = 120;
 
-	[JsonPropertyName("position_x")]
-	public double PositionX { get; set; } = 586;
+	[JsonPropertyName("pos_x")]
+	public double SpawnX { get; set; } = 586;
 
-	[JsonPropertyName("position_y")]
-	public double PositionY { get; set; } = 332;
+	[JsonPropertyName("pos_y")]
+	public double SpawnY { get; set; } = 332;
 }

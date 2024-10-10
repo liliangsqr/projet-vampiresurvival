@@ -8,13 +8,33 @@ public partial class LevelManager : Node
 	
 	public void LoadLevel(string _chemin)
 	{
-		GD.Print("-> fonction LoadLevel()");
+		GD.Print("┌-------------------------------------------- LoadLevel()-------------------------------------------┐");
 
 		PackedScene niveau;
 		try
 		{
 			niveau = GD.Load<PackedScene>(_chemin);
-			game_manager.ChangeSceneToPacked(niveau);
+			if (niveau != null)
+			{
+				Node newSceneInstance = niveau.Instantiate();
+				game_manager.GetRoot().AddChild(newSceneInstance);
+
+				GD.Print("| Nouvelle scène ajoutée : " + newSceneInstance.SceneFilePath);
+				Node currentScene = game_manager.CurrentScene;
+				
+				if (currentScene != null)
+				{
+					currentScene.CallDeferred("free");
+					GD.Print("| Ancienne scène sera supprimée.");
+				}
+
+				game_manager.CurrentScene = newSceneInstance;
+				GD.Print("| Nouvelle scène courante : " + game_manager.CurrentScene.SceneFilePath);
+			}
+			else
+			{
+				GD.PrintErr("| Erreur : Impossible de charger la nouvelle scène.");
+			}
 		}
 		catch (Exception e)
 		{
@@ -22,7 +42,9 @@ public partial class LevelManager : Node
 			Console.WriteLine(e);
 			throw;
 		}
-		GD.Print($"Loaded scene: {niveau} chemin:{_chemin} ");
+		GD.Print($"| Loaded scene: {niveau} chemin:{_chemin} ");
+		GD.Print("└---------------------------------------------------------------------------------------------------┘");
+
 	}
 	
 

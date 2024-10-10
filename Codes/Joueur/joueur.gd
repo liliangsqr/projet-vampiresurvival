@@ -12,6 +12,7 @@ extends CharacterBody2D
 @onready var anim2D = $AnimatedSprite2D
 
 func _physics_process(_delta):
+	PV = joueur_statistique.PV
 	Animation_joueur(Deplacement_joueur());
 	VerrifPause();
 	
@@ -105,9 +106,9 @@ func tir_zone(effectif):
 #region degatsubits
 func Prendre_degat(nombre:int):
 	var degat_subit = nombre;
-	self.PV -= degat_subit;
+	joueur_statistique.PV -= degat_subit;
 	
-	if PV <=0:
+	if joueur_statistique.PV <=0:
 		CustomGameLoop.GetInstance().GetLevelManager().SwitchPauseLevel();
 		CustomGameLoop.GetInstance().GetLevelManager().LoadLevel("res://Codes/Menus/deathscreen.tscn")
 	else : 
