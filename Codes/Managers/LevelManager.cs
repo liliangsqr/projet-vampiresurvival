@@ -3,15 +3,16 @@ using System;
 
 public partial class LevelManager : Node
 {
-
 	public SceneTree game_manager =  CustomGameLoop.GetInstance();
 	private Control PauseMenu;
 	
 	public void LoadLevel(string _chemin)
 	{
+		GD.Print("-> fonction LoadLevel()");
+
 		PackedScene niveau;
 		try
-		{ 
+		{
 			niveau = GD.Load<PackedScene>(_chemin);
 			game_manager.ChangeSceneToPacked(niveau);
 		}
@@ -21,9 +22,9 @@ public partial class LevelManager : Node
 			Console.WriteLine(e);
 			throw;
 		}
-		
-		GD.Print($"Loaded scene: {niveau}");
+		GD.Print($"Loaded scene: {niveau} chemin:{_chemin} ");
 	}
+	
 
 	public void SwitchPauseLevel(){
 		if (GetTree().Paused)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b8wvip7sei4d4"]
+[gd_scene load_steps=25 format=3 uid="uid://b8wvip7sei4d4"]
 
 [ext_resource type="Script" path="res://Codes/Joueur/joueur.gd" id="1_kama8"]
 [ext_resource type="PackedScene" uid="uid://bdesynplswtoy" path="res://Codes/Projectiles/projectile.tscn" id="2_h2iwc"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dt7510yjnmkfs" path="res://Codes/Projectiles/boutton_competence.tscn" id="5_xmdrg"]
 [ext_resource type="PackedScene" uid="uid://bpvsqbbk7bow7" path="res://Codes/Menus/Pause_menu.tscn" id="8_umc13"]
 [ext_resource type="PackedScene" uid="uid://crh8ovpaphila" path="res://Codes/Menus/deathscreen.tscn" id="9_pjywr"]
+[ext_resource type="PackedScene" uid="uid://b2esqhgxc51ua" path="res://Codes/Joueur/joueur_statistique.tscn" id="10_ekurj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtp4a"]
 
@@ -201,6 +202,8 @@ offset_left = 0.639954
 offset_top = -0.280014
 offset_right = -0.600037
 offset_bottom = 4.0
+
+[node name="JoueurStatistique" parent="." instance=ExtResource("10_ekurj")]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

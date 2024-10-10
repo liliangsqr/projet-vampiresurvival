@@ -1,9 +1,9 @@
 extends CharacterBody2D
-class_name Player
 
+@onready var joueur_statistique = $JoueurStatistique
 
-@onready var vitesse : float = 120
-@onready var PV: int = 100:
+@onready var vitesse : float = joueur_statistique.Vitesse
+@onready var PV: int = joueur_statistique.PV:
 	set(valeur):
 		PV=valeur
 		%Bare_vie.value = valeur

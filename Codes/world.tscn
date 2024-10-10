@@ -1,8 +1,9 @@
-[gd_scene load_steps=40 format=4 uid="uid://yji26uo8aubg"]
+[gd_scene load_steps=41 format=4 uid="uid://yji26uo8aubg"]
 
 [ext_resource type="Texture2D" uid="uid://bf721cf4443ti" path="res://Textures/Level/Ground Tileset.png" id="1_k7tm1"]
 [ext_resource type="PackedScene" uid="uid://b8wvip7sei4d4" path="res://Codes/Joueur/joueur.tscn" id="1_njttt"]
 [ext_resource type="PackedScene" uid="uid://vavestn0sdmr" path="res://Codes/Enemie/Spawner/spawner.tscn" id="1_ta2wf"]
+[ext_resource type="Script" path="res://Codes/World.cs" id="1_tqhh2"]
 [ext_resource type="Texture2D" uid="uid://b4cltuk0bhkmb" path="res://Textures/Level/Forest Cliff.png" id="2_ddoof"]
 [ext_resource type="PackedScene" uid="uid://3tjrwuljur4e" path="res://Codes/Enemie/enemie.tscn" id="2_gqll7"]
 [ext_resource type="Texture2D" uid="uid://c0ugowjh6novr" path="res://Textures/Level/Forest Structures.png" id="4_l34qo"]
@@ -8599,6 +8600,7 @@ sources/0 = SubResource("TileSetAtlasSource_dioo2")
 
 [node name="World" type="Node2D"]
 process_mode = 1
+script = ExtResource("1_tqhh2")
 
 [node name="DESSOUS" type="Parallax2D" parent="."]
 
