@@ -23,6 +23,10 @@ window/size/mode=1
 window/size/window_width_override=1280
 window/size/window_height_override=640
 
+[dotnet]
+
+project/assembly_name="PROJET VampireSurvival"
+
 [file_customization]
 
 folder_colors={
