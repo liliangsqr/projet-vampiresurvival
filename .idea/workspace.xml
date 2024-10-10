@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e25c3d9e-49c8-4a1e-8710-47c5fa5d473e" name="Changes" comment="" />
+    <list default="true" id="374bbcd9-81cb-45b0-9354-4ab760516386" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save/save.json" beforeDir="false" afterPath="$PROJECT_DIR$/save/save.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,9 +17,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
+  "associatedIndex": 3
 }]]></component>
-  <component name="ProjectId" id="2nA1m7kFbl5JwhaAS6C3B2HRWAy" />
+  <component name="ProjectId" id="2nGYsN11WNzDcA1SSmDoLmI2vSW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -21,18 +27,31 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging GameInstance-&&-LevelManager",
+    "git-widget-placeholder": "Colision__Decors",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e25c3d9e-49c8-4a1e-8710-47c5fa5d473e" name="Changes" comment="" />
-      <created>1728401223111</created>
+      <changelist id="374bbcd9-81cb-45b0-9354-4ab760516386" name="Changes" comment="" />
+      <created>1728601086785</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1728401223111</updated>
+      <updated>1728601086785</updated>
     </task>
     <servers />
   </component>
