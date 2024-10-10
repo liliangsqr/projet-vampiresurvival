@@ -56,3 +56,5 @@ polygon = PackedVector2Array(797, -799, 770, -799, 769, -859, 913, -857, 914, -9
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Murs labirynth"]
 polygon = PackedVector2Array(914, -1085, 914, -1056, 972, -1056, 971, -1070, 925, -1070, 926, -1085)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Murs labirynth"]
