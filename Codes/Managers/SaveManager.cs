@@ -36,7 +36,7 @@ public partial class SaveManager : Node2D
 		GD.Print("┌-------------------------------------------- LoadSave()-------------------------------------------┐");
 		if (!FileAccess.FileExists(filename))
 		{
-			GD.Print("Save file does not exist");
+			GD.Print("Fichier de sauvegarde introuvable");
 			return;
 		}
 		
@@ -57,7 +57,7 @@ public partial class SaveManager : Node2D
 			}
 			else
 			{
-				GD.Print("Player Stats pas Loaded:");
+				GD.Print("Ca a pas load:");
 			}
 		}
 		GD.Print("└---------------------------------------------------------------------------------------------------┘");
@@ -78,8 +78,14 @@ public partial class SaveManager : Node2D
 
 			if (joueurStatistique != null)
 			{
+				//!\\ si on change les valeurs dans la save on peut cheater //!\\
+				// il faudrai crypter parceque si la persone change à chaque fois les valeurs dans la save il quitte en sauvegardant puis change les valeurs
+				if(_deserializePlayerStats.PV > 100 || _deserializePlayerStats.PV <=0) // on limite la casse sinon on va pouvoir mettre des milliards de pv
+				{
+					_deserializePlayerStats.PV = 100;
+				}
 				joueurStatistique.PV = _deserializePlayerStats.PV;
-				joueurStatistique.Vitesse = _deserializePlayerStats.Vitesse;
+				joueurStatistique.Vitesse = _deserializePlayerStats.Vitesse; // je l'ai mis mais elle sert a rien on la sérialise pas pour le moment
 				joueurStatistique.SpawnX = _deserializePlayerStats.SpawnX;
 				joueurStatistique.SpawnY = _deserializePlayerStats.SpawnY;
 				GD.Print("Player stats updated in the scene.");
@@ -87,12 +93,12 @@ public partial class SaveManager : Node2D
 			}
 			else
 			{
-				GD.Print("JoueurStatistique node not found.");
+				GD.Print("si toi tu te montre c'est une folie, je comprendrai pas");
 			}
 		}
 		else
 		{
-			GD.Print("Bonjour il y a pas de node gros con ");
+			GD.Print("Ca me rend fou ca détecte pas le joueur");
 		}
 	}
 }

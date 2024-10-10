@@ -1,5 +1,6 @@
 using Godot;
 using System;
+//Lilian ghsquiere
 
 public partial class LevelManager : Node
 {
@@ -43,7 +44,7 @@ public partial class LevelManager : Node
 			throw;
 		}
 		GD.Print($"| Loaded scene: {niveau} chemin:{_chemin} ");
-		GD.Print("└---------------------------------------------------------------------------------------------------┘");
+		GD.Print("└---------------------------------------------------------------------------------------------------┘"); //Lilian ghsquiere
 
 	}
 	

@@ -109,8 +109,10 @@ func Prendre_degat(nombre:int):
 	joueur_statistique.PV -= degat_subit;
 	
 	if joueur_statistique.PV <=0:
+		
 		CustomGameLoop.GetInstance().GetLevelManager().SwitchPauseLevel();
 		CustomGameLoop.GetInstance().GetLevelManager().LoadLevel("res://Codes/Menus/deathscreen.tscn")
+		
 	else : 
 		print("PV = "+str(PV))
 	
