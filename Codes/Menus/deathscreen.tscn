@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://crh8ovpaphila"]
+[gd_scene load_steps=3 format=3 uid="uid://crh8ovpaphila"]
 
 [ext_resource type="Script" path="res://Codes/Menus/deathscreen.gd" id="1_fsabj"]
+[ext_resource type="Texture2D" uid="uid://dhwo0kpbwtbnn" path="res://Textures/Projectile/blanc 20x20.png" id="2_gtu5e"]
 
 [node name="Deathscreen" type="Control"]
 layout_mode = 3
@@ -13,6 +14,12 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
 script = ExtResource("1_fsabj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0.0706062, 0.356863)
+position = Vector2(-1.24994, -1.75)
+scale = Vector2(64.225, 32.275)
+texture = ExtResource("2_gtu5e")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 process_mode = 3

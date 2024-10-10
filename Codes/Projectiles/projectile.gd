@@ -23,7 +23,6 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 func Detruire():
 	queue_free()
 
-
 func _on_area_entered(area: Area2D,i=0) -> void:
 	#detruire l'objet 
 	pass
