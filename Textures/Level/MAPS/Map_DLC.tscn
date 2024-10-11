@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=4 uid="uid://yji26uo8aubg"]
+[gd_scene load_steps=3 format=4 uid="uid://yji26uo8aubg"]
 
 [ext_resource type="PackedScene" uid="uid://d2w4x8lmmv1i" path="res://Textures/Level/groundthomas.tscn" id="1_tbcp1"]
 [ext_resource type="PackedScene" uid="uid://cuoivcivhg862" path="res://Textures/Level/wall.tscn" id="2_uvnyr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kb6i"]
-size = Vector2(11, 165.5)
 
 [node name="MapDLC" type="Node2D"]
 
@@ -13,16 +10,6 @@ tile_map_data = PackedByteArray("AADW/9f/FQAEAAMAAADW/9j/FQAEAAMAAADW/9n/FQAEAAM
 
 [node name="Wall" parent="." instance=ExtResource("2_uvnyr")]
 z_index = 1
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(965.5, -1662.25)
-shape = SubResource("RectangleShape2D_5kb6i")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1015, -1663)
-shape = SubResource("RectangleShape2D_5kb6i")
 
 [node name="Murs labirynth" type="StaticBody2D" parent="."]
 collision_layer = 16
@@ -69,3 +56,9 @@ polygon = PackedVector2Array(797, -799, 770, -799, 769, -859, 913, -857, 914, -9
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Murs labirynth"]
 polygon = PackedVector2Array(914, -1085, 914, -1056, 972, -1056, 971, -1070, 925, -1070, 926, -1085)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="Murs labirynth"]
+polygon = PackedVector2Array(1010, -1741, 1010, -1606, 1019, -1606, 1018, -1743)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="Murs labirynth"]
+polygon = PackedVector2Array(962, -1741, 963, -1610, 971, -1610, 969, -1741)
