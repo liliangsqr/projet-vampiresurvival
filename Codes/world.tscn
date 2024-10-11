@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://yji26uo8aubg"]
+[gd_scene load_steps=5 format=3 uid="uid://yji26uo8aubg"]
 
-[ext_resource type="PackedScene" uid="uid://yji26uo8aubg" path="res://Textures/Level/MAPS/Map_DLC.tscn" id="1_kxuh8"]
 [ext_resource type="PackedScene" uid="uid://dlfec8rlajt2a" path="res://Textures/Level/MAPS/map_classique.tscn" id="2_3rqob"]
 [ext_resource type="PackedScene" uid="uid://vavestn0sdmr" path="res://Codes/Enemie/Spawner/spawner.tscn" id="3_ue0ua"]
 [ext_resource type="PackedScene" uid="uid://3tjrwuljur4e" path="res://Codes/Enemie/enemie.tscn" id="4_vqnsh"]
@@ -10,10 +9,6 @@
 process_mode = 1
 
 [node name="MapClassique" parent="." instance=ExtResource("2_3rqob")]
-
-[node name="MapDLC" parent="." instance=ExtResource("1_kxuh8")]
-position = Vector2(-1459, 4306)
-scale = Vector2(2, 2)
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("reference_joueur") instance=ExtResource("3_ue0ua")]
 position = Vector2(594, 333)
